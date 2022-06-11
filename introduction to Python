@@ -1,0 +1,25 @@
+# Read in packages
+import numpy as np
+import math
+import pandas as pd
+
+# Read in the file
+baseball_df = pd.read_csv("datasets/baseball.csv")
+
+# Separate into arrays
+baseball_names = baseball_df["Name"].to_numpy()
+baseball_heights = baseball_df["Height"].to_numpy()
+baseball_weights = baseball_df["Weight"].to_numpy()
+baseball_ages = baseball_df["Age"].to_numpy()
+
+# Print out first array
+baseball_names
+
+# 1. Print out the names of the first ten baseball players
+display(baseball_names.head(10))
+
+# 2. Print out the median weight of all baseball players
+np.median(baseball_weights)
+
+# 3. Print out the names of all players with a height greater than 80
+display(baseball_names[baseball_heights>80])
